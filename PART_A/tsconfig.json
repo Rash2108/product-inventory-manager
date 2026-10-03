@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "strict": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts"]
+}
+
+//target: Specifies the JavaScript version that TypeScript should generate.
+//strict: Enables strict type checking, helping detect type-related errors during development.
+//outDir: Specifies the folder where the compiled JavaScript files should be generated.
