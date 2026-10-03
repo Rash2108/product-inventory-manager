@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Inventory Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Product Inventory Manager</h1>
+      <p>Manage products, calculate discounts, and track stock in real time.</p>
+    </header>
+
+    <!-- Product Form -->
+    <section class="card">
+      <h2>Add New Product</h2>
+      <form id="product-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="product-id">Product ID (Number or String)</label>
+            <input type="text" id="product-id" placeholder="e.g. 101 or P-101" required />
+          </div>
+
+          <div class="form-group">
+            <label for="product-name">Product Name</label>
+            <input type="text" id="product-name" placeholder="e.g. Wireless Mouse" required />
+          </div>
+
+          <div class="form-group">
+            <label for="product-price">Price (₹)</label>
+            <input type="number" id="product-price" step="0.01" min="0" placeholder="e.g. 29.99" required />
+          </div>
+
+          <div class="form-group">
+            <label for="product-tags">Tags (comma-separated)</label>
+            <input type="text" id="product-tags" placeholder="e.g. Electronics, Tech, Accessories" />
+          </div>
+        </div>
+
+        <div class="form-inline">
+          <label class="checkbox-label">
+            <input type="checkbox" id="product-instock" checked />
+            In Stock
+          </label>
+          <button type="submit" class="btn primary-btn">Add Product</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Controls & Filters -->
+    <section class="controls card">
+      <div class="filter-actions">
+        <button id="show-all-btn" class="btn secondary-btn active">Show All</button>
+        <button id="show-available-btn" class="btn secondary-btn">Available Only</button>
+      </div>
+
+      <div class="discount-actions">
+        <input type="number" id="discount-percent" placeholder="Discount %" min="0" max="100" value="10" />
+        <button id="apply-discount-btn" class="btn outline-btn">Apply Discount to All</button>
+      </div>
+    </section>
+
+    <!-- Inventory Table -->
+    <section class="card">
+      <h2>Inventory List</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Tags</th>
+              <th>Discounted Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-table-body">
+            <!-- Dynamic rows will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
